@@ -1,0 +1,31 @@
+## Docker commands used to build the application 
+docker build -t techtrends .
+
+## Docker commands used to run the application
+docker run -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs ce7ae4e1a73b4d94824de39b224ac6298b081332e716f7f2c75b9e9e8379244b
+
+## Logs from the container running the TechTrends application
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:10:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:10:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:10:19] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:10:19] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:app:21/10/2022, 08:11:33, Article 2 found, render
+INFO:app:21/10/2022, 08:11:33, Article 2 found, render
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:11:33] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:11:33] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:11:33] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [21/Oct/2022 08:11:33] "GET /static/css/main.css HTTP/1.1" 304 -
