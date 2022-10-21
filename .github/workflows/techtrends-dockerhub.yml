@@ -2,7 +2,7 @@ name: TechTrends - Package with Docker"
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -30,4 +30,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: techtrends:latest
+          tags: ap84gray/techtrends:latest
