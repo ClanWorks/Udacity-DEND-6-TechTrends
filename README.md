@@ -10,4 +10,4 @@ To run this application there are 2 steps required:
 2.  Run the TechTrends application by using the `python app.py` command. The application is running on port `3111` and you can access it by querying the `http://127.0.0.1:3111/` endpoint.
 
 
-A test
+Another test
