@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/s0233595/nd064_course_1/project-gray/techtrends","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
