@@ -27,7 +27,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./techtrends/Dockerfile
+          context: ./techtrends
+          file: ./Dockerfile
           push: true
           tags: ap84gray/techtrends:latest
