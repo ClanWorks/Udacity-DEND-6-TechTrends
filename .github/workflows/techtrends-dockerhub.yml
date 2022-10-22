@@ -7,9 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./techtrends
     steps:
       -
         name: Checkout
@@ -31,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile
+          file: ./techtrends/Dockerfile
           push: true
           tags: ap84gray/techtrends:latest
