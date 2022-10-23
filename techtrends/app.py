@@ -112,7 +112,7 @@ def healthz():
 @app.route('/metrics')
 def metrics():
     response = app.response_class(
-            response=json.dumps({"db_connection_count":conn_count,"post_count":post_counter()}),
+            response=json.dumps({"db_connection_count":global conn_count,"post_count":post_counter()}),
             status=200,
             mimetype='application/json'
     )
