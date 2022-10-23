@@ -1,3 +1,5 @@
+# Dockerfile to build the techtrends app
+
 FROM python:3.8
 LABEL maintainer="andymin"
 
