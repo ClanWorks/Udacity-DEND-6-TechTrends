@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./techtrends/Dockerfile
+          file: ./Dockerfile
           push: true
           tags: ap84gray/techtrends:latest
