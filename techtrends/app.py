@@ -88,11 +88,11 @@ def create():
     return render_template('create.html')
 
 # Function to count number of posts using post -> id
-# Dont use the get_db_connection() to avoid skewed connection count
 # fetchone returns tuple so select first element
 
 def post_counter():
-    connection = sqlite3.connect('database.db')
+    # connection = sqlite3.connect('database.db')
+    connection = get_db_connection()
     connection.row_factory = sqlite3.Row
     post_count = connection.execute('SELECT COUNT(id) FROM posts').fetchone()
     connection.close()
