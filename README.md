@@ -157,3 +157,41 @@ a sandbox namespace
 a techtrends deployment, in the sandbox namespace with 1 replica or pod running
 a techtrends service that exposes the TechTrends application on port 4111 using a ClusterIP
 
+## 5. Helm Charts
+Throughout this step, I used a template configuration manager, Helm, to parameterized the TechTrends manifests. You will build a Helm Chart to template and release the application to multiple environments. As a result, I have a collection of parametrized YAML manifests that use an input values file to generate valid Kubernetes objects.
+
+### Helm Chart
+Using the YAML manifests build in the previous step, I created a Helm chart.
+
+### Values.yaml files for multiple environments
+Once I constructed the Helm chart with a default "values.yaml" file, I created 2 more input files.
+
+values-staging.yaml 
+namespace name: prod
+
+## 6. Continuous Delivery with ArgoCD
+In this final step, I deployed the TechTrends automatically using Continuous Delivery fundamentals. I made use of ArgoCD to release the application to staging and production environments using the templated manifests from the Helm chart. I have an automated and templated procedure to deploy TechTends to multiple environments.
+
+### Deploy ArgoCD
+Given the k3s cluster, install ArgoCD and access it through the browser. Make sure to reference the instructions below:
+
+Official install guide for ArgoCD
+The YAML manifest for the NodePort service can be found under the argocd-server-nodeport.yaml file in the course repository
+Access the ArgoCD UI by going to https://192.168.50.4:30008 or http://192.168.50.4:30007
+Login credentials can be retrieved using the steps in the credentials guide
+Note: Take a screenshot of the ArgoCD view once logged in, including the navigation bar, and place it in the screenshot folder with the name argocd-ui.
+
+### ArgoCD Applications
+Create ArgoCD Applications resources to deploy TechTrends to staging and production environments. You need to reference the TechTrends Helm chart built in the previous step and use the respective input files. As such, create the following ArgoCD application manifests:
+
+helm-techtrends-staging.yaml
+name: techtrends-staging
+values file: values-staging.yaml
+helm-techtrends-prod.yaml
+name: techtrends-prod
+values file: values-prod.yaml
+
+### Deploy TechTrends with ArgoCD
+Using kubectl commands apply the ArgoCD Applications manifests. Make sure to synchronize the application in ArgoCD, so that all the TechTrends resources is deployed successfully. As a result, you should have 2 new namespaces, staging and prod, a deployment for each environment (each with a different amount of pods), and a service exposing the application on different ports.
+
+Thank you 
